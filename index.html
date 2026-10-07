@@ -1,380 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="wkXToIBu_RVYS5ut9bnbFmSXNDmkeuJ3F9goOgWI4Wc" />
-  <meta name="description" content="Hiren Patel - IT Graduate, Software Engineer & Full Stack Developer from Kathlal, Gujarat, India."/>
-  <meta name="keywords" content="Hirenpatel007, Hiren Patel, Software Engineer, Developer, Gujarat, India, GitHub"/>
-  <title>Hiren Patel | Developer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="wkXToIBu_RVYS5ut9bnbFmSXNDmkeuJ3F9goOgWI4Wc" />
+    <meta name="description"
+        content="Hiren Patel - Software Engineer, Multi-Platform & Full Stack Developer from Kathlal, Gujarat, India." />
+    <meta name="keywords" content="Hirenpatel007, Hiren Patel, Software Engineer, Full Stack Developer, Flutter, Python, PHP, Gujarat, India, GitHub" />
+    <title>Hiren Patel | Software Engineer & Developer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --border: #1e1e1e;
-      --accent: #ff6b35;
-      --accent2: #ffd166;
-      --text: #f0f0f0;
-      --muted: #666;
-    }
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <style>
+        :root {
+            --bg-dark: #07090e;
+            --surface-card: rgba(18, 23, 34, 0.7);
+            --surface-card-hover: rgba(28, 36, 52, 0.85);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(0, 229, 255, 0.4);
+            --primary: #00e5ff;
+            --primary-glow: rgba(0, 229, 255, 0.25);
+            --secondary: #7928ca;
+            --accent: #ff007a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gradient-1: linear-gradient(135deg, #00e5ff 0%, #7928ca 50%, #ff007a 100%);
+            --gradient-2: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(121, 40, 202, 0.15));
+        }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Space Mono', monospace;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    /* BG grid */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,107,53,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,107,53,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            selection-background-color: var(--primary);
+            selection-color: #000;
+        }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 60px 24px;
-      position: relative;
-      z-index: 1;
-    }
+        /* Dynamic Animated Background */
+        .ambient-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.45;
+            animation: pulseGlow 12s infinite alternate ease-in-out;
+        }
 
-    /* HEADER */
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 64px;
-      animation: fadeUp 0.7s ease both;
-    }
+        .glow-1 {
+            width: 500px;
+            height: 500px;
+            background: #00e5ff;
+            top: -150px;
+            left: -150px;
+        }
 
-    .tag {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-family: 'Space Mono', monospace;
-    }
+        .glow-2 {
+            width: 600px;
+            height: 600px;
+            background: #7928ca;
+            bottom: -150px;
+            right: -150px;
+            animation-delay: -6s;
+        }
 
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -2px;
-    }
+        .glow-3 {
+            width: 400px;
+            height: 400px;
+            background: #ff007a;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+        }
 
-    h1 span {
-      color: var(--accent);
-    }
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.15) translate(30px, 40px); }
+            100% { transform: scale(0.9) translate(-20px, 20px); }
+        }
 
-    .subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 8px;
-      letter-spacing: 1px;
-    }
+        /* Tech Mesh Grid */
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-    .location {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative;
+            z-index: 2;
+        }
 
-    /* ABOUT */
-    .section {
-      margin-bottom: 52px;
-      animation: fadeUp 0.7s ease both;
-      animation-delay: 0.15s;
-    }
+        /* Glassmorphism Classes */
+        .glass {
+            background: var(--surface-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    .section-title {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .glass:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 12px 30px -10px var(--primary-glow);
+        }
 
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
+        /* HERO HEADER */
+        header {
+            margin-bottom: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-    .about-text {
-      font-size: 14px;
-      line-height: 1.9;
-      color: #aaa;
-      max-width: 600px;
-    }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--primary);
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
 
-    /* TECH STACK */
-    .stack-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: blink 2s infinite;
+        }
 
-    .chip {
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      font-size: 11px;
-      letter-spacing: 1px;
-      color: #aaa;
-      background: var(--surface);
-      transition: all 0.2s;
-      cursor: default;
-    }
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
 
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+        }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
 
-    @media (max-width: 580px) {
-      .projects-grid { grid-template-columns: 1fr; }
-    }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
 
-    .project-card {
-      border: 1px solid var(--border);
-      padding: 20px;
-      background: var(--surface);
-      transition: border-color 0.2s, transform 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #64748b;
+            font-size: 14px;
+            font-family: 'JetBrains Mono', monospace;
+        }
 
-    .project-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
+        .location-tag i {
+            color: var(--accent);
+        }
 
-    .project-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
+        /* SECTION TITLES */
+        .section {
+            margin-bottom: 60px;
+        }
 
-    .project-desc {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
 
-    .project-lang {
-      margin-top: 14px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent2);
-    }
+        .section-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--gradient-2);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 16px;
+        }
 
-    /* LINKS */
-    .links-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
 
-    .social-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: #aaa;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1px;
-      transition: all 0.2s;
-    }
+        /* ABOUT BOX */
+        .about-card {
+            padding: 32px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .social-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-1);
+        }
 
-    /* FOOTER */
-    footer {
-      margin-top: 80px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 11px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      animation: fadeUp 0.7s ease both;
-      animation-delay: 0.4s;
-    }
+        /* TECH STACK CATEGORIZED */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .skill-group {
+            padding: 24px;
+        }
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+        .skill-group-title {
+            font-size: 0.95rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .section:nth-child(2) { animation-delay: 0.2s; }
-    .section:nth-child(3) { animation-delay: 0.3s; }
-    .section:nth-child(4) { animation-delay: 0.35s; }
-    .section:nth-child(5) { animation-delay: 0.4s; }
+        .chips-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    /* Accent bar */
-    .accent-bar {
-      width: 48px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 16px;
-      margin-bottom: 4px;
-    }
-  </style>
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            font-size: 13px;
+            font-weight: 500;
+            color: #e2e8f0;
+            transition: all 0.25s ease;
+            cursor: default;
+        }
+
+        .chip i {
+            color: var(--primary);
+            font-size: 14px;
+            transition: transform 0.25s;
+        }
+
+        .chip:hover {
+            background: rgba(0, 229, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        .chip:hover i {
+            transform: scale(1.15);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: var(--surface-card-hover);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .folder-icon {
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .ext-icon {
+            color: var(--text-muted);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover .ext-icon {
+            color: var(--primary);
+            transform: translate(3px, -3px);
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .project-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+        }
+
+        .project-footer i {
+            font-size: 8px;
+        }
+
+        /* CONNECT LINKS */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 14px;
+        }
+
+        .social-link {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .social-link i {
+            font-size: 18px;
+            transition: transform 0.25s;
+        }
+
+        .social-link.github i { color: #fff; }
+        .social-link.email i { color: #ea4335; }
+        .social-link.telegram i { color: #229ed9; }
+        .social-link.instagram i { color: #e4405f; }
+        .social-link.facebook i { color: #1877f2; }
+        .social-link.snapchat i { color: #fffc00; }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background: rgba(0, 229, 255, 0.08);
+        }
+
+        .social-link:hover i {
+            transform: scale(1.2);
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Entrance Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .container { padding: 50px 16px; }
+            .hero-title { font-size: 2.8rem; }
+            .about-card { padding: 22px; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
+    <!-- Dynamic Ambient Background Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+    <div class="grid-overlay"></div>
 
-  <!-- HEADER -->
-  <header>
-    <span class="tag">🕉️ Portfolio</span>
-    <h1>Hiren<br/><span>Patel</span></h1>
-    <div class="accent-bar"></div>
-    <p class="subtitle">IT Graduate &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Full Stack Developer</p>
-    <p class="location">📍 Kathlal, Gujarat, India</p>
-  </header>
+    <div class="container">
 
-  <!-- ABOUT -->
-  <div class="section">
-    <p class="section-title">About</p>
-    <p class="about-text">
-      I'm a passionate Software Engineer and Full Stack Developer who loves building real-world digital tools. 
-      Currently working on Full Stack Web Development, continuously learning new technologies and looking 
-      to collaborate on meaningful projects. Fun fact — I love debugging more than writing new code! 😄
-    </p>
-  </div>
+        <!-- HERO HEADER -->
+        <header class="fade-in">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Available for Projects & Collaboration</span>
+            </div>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Hiren Patel</span>
+            </h1>
+            <p class="hero-subtitle">Software Engineer &nbsp;·&nbsp; Multi-Platform & Full-Stack Developer</p>
+            <div class="location-tag">
+                <i class="fa-solid fa-location-dot"></i> Kathlal, Gujarat, India 🇮🇳
+            </div>
+        </header>
 
-  <!-- TECH STACK -->
-  <div class="section">
-    <p class="section-title">Tech Stack</p>
-    <div class="stack-grid">
-      <span class="chip">Python</span>
-      <span class="chip">Django</span>
-      <span class="chip">Flask</span>
-      <span class="chip">JavaScript</span>
-      <span class="chip">React</span>
-      <span class="chip">Flutter</span>
-      <span class="chip">HTML5</span>
-      <span class="chip">CSS3</span>
-      <span class="chip">Bootstrap</span>
-      <span class="chip">MySQL</span>
-      <span class="chip">SQLite</span>
-      <span class="chip">Git</span>
-      <span class="chip">GitHub</span>
+        <!-- ABOUT SECTION -->
+        <div class="section fade-in delay-1">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="glass about-card">
+                I'm a passionate Software Engineer and Full Stack Developer who thrives on architecting robust digital solutions, cross-platform apps, and scalable web applications. Continuously exploring cutting-edge technologies, solving complex real-world challenges, and optimizing system architectures.
+                <br><br>
+                💡 <em>"I enjoy debugging and optimizing complex codebases more than writing from scratch!"</em>
+            </div>
+        </div>
+
+        <!-- TECH STACK & SKILLS -->
+        <div class="section fade-in delay-2">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h2 class="section-title">Tech Stack & Ecosystem</h2>
+            </div>
+            <div class="skills-container">
+
+                <!-- Programming & Core -->
+                <div class="glass skill-group">
+                    <div class="skill-group-title"><i class="fa-solid fa-code"></i> Core & Frameworks</div>
+                    <div class="chips-wrapper">
+                        <span class="chip"><i class="fa-brands fa-php"></i> PHP</span>
+                        <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="chip"><i class="fa-solid fa-feather-pointed"></i> Flutter / Dart</span>
+                        <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="chip"><i class="fa-brands fa-react"></i> React</span>
+                        <span class="chip"><i class="fa-solid fa-bolt"></i> Django / Flask</span>
+                    </div>
+                </div>
+
+                <!-- Frontend & UI -->
+                <div class="glass skill-group">
+                    <div class="skill-group-title"><i class="fa-solid fa-palette"></i> Frontend & Design</div>
+                    <div class="chips-wrapper">
+                        <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3 / SCSS</span>
+                        <span class="chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                        <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Responsive UI</span>
+                    </div>
+                </div>
+
+                <!-- Databases & APIs -->
+                <div class="glass skill-group">
+                    <div class="skill-group-title"><i class="fa-solid fa-database"></i> Databases & APIs</div>
+                    <div class="chips-wrapper">
+                        <span class="chip"><i class="fa-solid fa-server"></i> MySQL</span>
+                        <span class="chip"><i class="fa-solid fa-database"></i> SQLite</span>
+                        <span class="chip"><i class="fa-solid fa-network-wired"></i> REST APIs</span>
+                        <span class="chip"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="glass skill-group">
+                    <div class="skill-group-title"><i class="fa-solid fa-terminal"></i> Tools & OS</div>
+                    <div class="chips-wrapper">
+                        <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
+                        <span class="chip"><i class="fa-brands fa-apple"></i> macOS</span>
+                        <span class="chip"><i class="fa-brands fa-windows"></i> Windows</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FEATURED PROJECTS -->
+        <div class="section fade-in delay-3">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/rapidmac" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-laptop-code folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Rapid Accountings (macOS)</div>
+                    <div class="project-desc">Complete Accounting, GST Billing, e-Invoice & e-Way Bill management software for macOS with offline SQLite database.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> Flutter · Dart · SQLite
+                    </div>
+                </a>
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/sawmill-gst-billing" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-folder-open folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Sawmill GST Billing</div>
+                    <div class="project-desc">Comprehensive GST Billing and Inventory Management System designed for Timber Saw Mills.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> Python · Django · MySQL
+                    </div>
+                </a>
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/hari_trading_platform" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-folder-open folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Hari Trading Platform</div>
+                    <div class="project-desc">Virtual stock trading platform with real-time portfolio management and financial insights.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> Django · JavaScript · CSS3
+                    </div>
+                </a>
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/my-php-project" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-folder-open folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Student Result System</div>
+                    <div class="project-desc">Efficient student performance tracking and examination grading management web application.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> PHP · MySQL · Bootstrap
+                    </div>
+                </a>
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/health_chatbot" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-folder-open folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Health AI Chatbot</div>
+                    <div class="project-desc">AI-powered medical assistant and symptom guidance conversational system.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> TypeScript · AI/LLM
+                    </div>
+                </a>
+
+                <a class="glass project-card" href="https://github.com/Hirenpatel007/Hacking-Security-E-Books" target="_blank">
+                    <div class="project-top">
+                        <i class="fa-solid fa-folder-open folder-icon"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                    </div>
+                    <div class="project-name">Security Knowledge Library</div>
+                    <div class="project-desc">Curated open-source repository of cybersecurity, ethical hacking, and networking guides.</div>
+                    <div class="project-footer">
+                        <i class="fa-solid fa-circle"></i> Documentation · Security
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- CONNECT SECTION -->
+        <div class="section fade-in delay-4">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="links-grid">
+                <a class="glass social-link github" href="https://github.com/Hirenpatel007" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a class="glass social-link email" href="mailto:hirenpatel1198@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a class="glass social-link telegram" href="https://t.me/HDCHHABHAIYA" target="_blank">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a class="glass social-link instagram" href="https://www.instagram.com/hiren_patel_007" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a class="glass social-link facebook" href="https://www.facebook.com/share/161XUyNg6y/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a class="glass social-link snapchat" href="https://www.snapchat.com/add/hiren2532" target="_blank">
+                    <i class="fa-brands fa-snapchat"></i>
+                    <span>Snapchat</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>© 2026 <b>Hiren Patel</b> &nbsp;·&nbsp; Crafted with Precision</span>
+            <span><a href="https://github.com/Hirenpatel007" target="_blank">github.com/Hirenpatel007</a></span>
+        </footer>
+
     </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <p class="section-title">Projects</p>
-    <div class="projects-grid">
-      <a class="project-card" href="https://github.com/Hirenpatel007/Hacking-Security-E-Books" target="_blank">
-        <div class="project-name">Hacking Security E-Books</div>
-        <div class="project-desc">Public library of hacking & security e-books PDF collection.</div>
-        <div class="project-lang">⭐ 2 &nbsp;·&nbsp; Forks 4</div>
-      </a>
-      <a class="project-card" href="https://github.com/Hirenpatel007/sawmill-gst-billing" target="_blank">
-        <div class="project-name">Sawmill GST Billing</div>
-        <div class="project-desc">GST Billing System for Timber Saw Mill built with Django.</div>
-        <div class="project-lang">Python</div>
-      </a>
-      <a class="project-card" href="https://github.com/Hirenpatel007/hari_trading_platform" target="_blank">
-        <div class="project-name">Hari Trading Platform</div>
-        <div class="project-desc">Virtual stock trading app with real-time prices & portfolio tracking.</div>
-        <div class="project-lang">HTML · Django</div>
-      </a>
-      <a class="project-card" href="https://github.com/Hirenpatel007/health_chatbot" target="_blank">
-        <div class="project-name">Health Chatbot</div>
-        <div class="project-desc">AI-powered health chatbot application.</div>
-        <div class="project-lang">TypeScript</div>
-      </a>
-      <a class="project-card" href="https://github.com/Hirenpatel007/my-php-project" target="_blank">
-        <div class="project-name">Student Result System</div>
-        <div class="project-desc">PHP + MySQL web app to manage student results efficiently.</div>
-        <div class="project-lang">PHP · SCSS</div>
-      </a>
-      <a class="project-card" href="https://github.com/Hirenpatel007/todo" target="_blank">
-        <div class="project-name">Todo App</div>
-        <div class="project-desc">Modern Django todo app with 30+ features including REST API.</div>
-        <div class="project-lang">HTML · Django</div>
-      </a>
-    </div>
-  </div>
-
-  <!-- CONNECT -->
-  <div class="section">
-    <p class="section-title">Connect</p>
-    <div class="links-grid">
-      <a class="social-link" href="https://github.com/Hirenpatel007" target="_blank">
-        🐙 GitHub
-      </a>
-      <a class="social-link" href="mailto:hirenpatel1198@gmail.com">
-        📧 Email
-      </a>
-      <a class="social-link" href="https://www.instagram.com/hiren_patel_007" target="_blank">
-        📸 Instagram
-      </a>
-      <a class="social-link" href="https://t.me/HDCHHABHAIYA" target="_blank">
-        💬 Telegram
-      </a>
-      <a class="social-link" href="https://www.facebook.com/share/161XUyNg6y/" target="_blank">
-        📘 Facebook
-      </a>
-      <a class="social-link" href="https://www.snapchat.com/add/hiren2532" target="_blank">
-        👻 Snapchat
-      </a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2025 Hiren Patel &nbsp;·&nbsp; <a href="https://github.com/Hirenpatel007">Hirenpatel007</a></span>
-    <span>Kathlal, Gujarat 🇮🇳</span>
-  </footer>
-
-</div>
 </body>
+
 </html>
