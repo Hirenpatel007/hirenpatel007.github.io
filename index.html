@@ -6,699 +6,926 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="wkXToIBu_RVYS5ut9bnbFmSXNDmkeuJ3F9goOgWI4Wc" />
     <meta name="description"
-        content="Hiren Patel - Software Engineer, Multi-Platform & Full Stack Developer from Kathlal, Gujarat, India." />
-    <meta name="keywords" content="Hirenpatel007, Hiren Patel, Software Engineer, Full Stack Developer, Flutter, Python, PHP, Gujarat, India, GitHub" />
-    <title>Hiren Patel | Software Engineer & Developer</title>
+        content="Hiren Patel — Software Engineer & Full-Stack Developer specializing in high-performance web platforms, enterprise systems, and cross-platform applications." />
+    <meta name="keywords" content="Hiren Patel, Software Engineer, Full-Stack Developer, Flutter, Python, PHP, Django, React, Gujarat, India, Tech Lead" />
+    <meta name="author" content="Hiren Patel" />
 
-    <!-- Google Fonts -->
+    <!-- Open Graph for LinkedIn / Twitter Previews -->
+    <meta property="og:title" content="Hiren Patel | Software Engineer & Multi-Platform Developer" />
+    <meta property="og:description" content="Portfolio of Hiren Patel — building robust backend systems, scalable cloud architectures, and intuitive digital experiences." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hirenpatel007.github.io/" />
+
+    <title>Hiren Patel — Software Engineer</title>
+
+    <!-- Typography: Inter + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
         :root {
-            --bg-dark: #07090e;
-            --surface-card: rgba(18, 23, 34, 0.7);
-            --surface-card-hover: rgba(28, 36, 52, 0.85);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(0, 229, 255, 0.4);
-            --primary: #00e5ff;
-            --primary-glow: rgba(0, 229, 255, 0.25);
-            --secondary: #7928ca;
-            --accent: #ff007a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --gradient-1: linear-gradient(135deg, #00e5ff 0%, #7928ca 50%, #ff007a 100%);
-            --gradient-2: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(121, 40, 202, 0.15));
+            --bg-base: #08090d;
+            --bg-surface: #0e1117;
+            --card-glass: rgba(18, 22, 32, 0.72);
+            --card-glass-hover: rgba(24, 30, 44, 0.9);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(56, 189, 248, 0.35);
+            --border-highlight: rgba(255, 255, 255, 0.16);
+            
+            --accent-cyan: #38bdf8;
+            --accent-blue: #2563eb;
+            --accent-purple: #8b5cf6;
+            --accent-emerald: #10b981;
+            
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            min-height: 100vh;
+            background-color: var(--bg-base);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            selection-background-color: var(--primary);
-            selection-color: #000;
         }
 
-        /* Dynamic Animated Background */
-        .ambient-glow {
+        /* Ambient Lighting Canvas */
+        .ambient-canvas {
             position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
+            inset: 0;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.45;
-            animation: pulseGlow 12s infinite alternate ease-in-out;
+            overflow: hidden;
         }
 
-        .glow-1 {
-            width: 500px;
-            height: 500px;
-            background: #00e5ff;
-            top: -150px;
-            left: -150px;
+        .ambient-glow-1 {
+            position: absolute;
+            top: -200px;
+            left: 15%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            filter: blur(100px);
         }
 
-        .glow-2 {
-            width: 600px;
-            height: 600px;
-            background: #7928ca;
-            bottom: -150px;
-            right: -150px;
-            animation-delay: -6s;
-        }
-
-        .glow-3 {
-            width: 400px;
-            height: 400px;
-            background: #ff007a;
+        .ambient-glow-2 {
+            position: absolute;
             top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.2;
+            right: -100px;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+            filter: blur(120px);
         }
 
-        @keyframes pulseGlow {
-            0% { transform: scale(1) translate(0, 0); }
-            50% { transform: scale(1.15) translate(30px, 40px); }
-            100% { transform: scale(0.9) translate(-20px, 20px); }
-        }
-
-        /* Tech Mesh Grid */
-        .grid-overlay {
+        /* Subtle Matrix Grid */
+        .grid-mask {
             position: fixed;
             inset: 0;
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 1;
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 80%);
             pointer-events: none;
+            z-index: 1;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Glassmorphism Classes */
-        .glass {
-            background: var(--surface-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 12px 30px -10px var(--primary-glow);
-        }
-
-        /* HERO HEADER */
-        header {
-            margin-bottom: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            border-radius: 9999px;
-            background: rgba(0, 229, 255, 0.08);
-            border: 1px solid rgba(0, 229, 255, 0.25);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--primary);
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--primary);
-            animation: blink 2s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin-bottom: 16px;
-        }
-
-        .gradient-text {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 12px;
-        }
-
-        .location-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #64748b;
-            font-size: 14px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .location-tag i {
-            color: var(--accent);
-        }
-
-        /* SECTION TITLES */
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-
-        .section-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: var(--gradient-2);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 16px;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* ABOUT BOX */
-        .about-card {
-            padding: 32px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #cbd5e1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-card::before {
-            content: '';
-            position: absolute;
+        /* Fixed Corporate Header Nav */
+        nav.nav-bar {
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-1);
+            width: 100%;
+            background: rgba(8, 9, 13, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 100;
         }
 
-        /* TECH STACK CATEGORIZED */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-group {
-            padding: 24px;
-        }
-
-        .skill-group-title {
-            font-size: 0.95rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--primary);
-            margin-bottom: 18px;
+        .nav-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 16px 24px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .chips-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            font-size: 13px;
-            font-weight: 500;
-            color: #e2e8f0;
-            transition: all 0.25s ease;
-            cursor: default;
-        }
-
-        .chip i {
-            color: var(--primary);
-            font-size: 14px;
-            transition: transform 0.25s;
-        }
-
-        .chip:hover {
-            background: rgba(0, 229, 255, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            color: #fff;
-        }
-
-        .chip:hover i {
-            transform: scale(1.15);
-        }
-
-        /* PROJECTS GRID */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            padding: 26px;
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            height: 100%;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            background: var(--surface-card-hover);
-        }
-
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .folder-icon {
-            font-size: 24px;
-            color: var(--primary);
-        }
-
-        .ext-icon {
-            color: var(--text-muted);
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-
-        .project-card:hover .ext-icon {
-            color: var(--primary);
-            transform: translate(3px, -3px);
-        }
-
-        .project-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .project-desc {
-            font-size: 13.5px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .project-footer {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: #38bdf8;
-            letter-spacing: 0.5px;
-        }
-
-        .project-footer i {
-            font-size: 8px;
-        }
-
-        /* CONNECT LINKS */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 14px;
-        }
-
-        .social-link {
-            padding: 16px 20px;
+        .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 14px;
+            color: var(--text-title);
         }
 
-        .social-link i {
-            font-size: 18px;
-            transition: transform 0.25s;
-        }
-
-        .social-link.github i { color: #fff; }
-        .social-link.email i { color: #ea4335; }
-        .social-link.telegram i { color: #229ed9; }
-        .social-link.instagram i { color: #e4405f; }
-        .social-link.facebook i { color: #1877f2; }
-        .social-link.snapchat i { color: #fffc00; }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            background: rgba(0, 229, 255, 0.08);
-        }
-
-        .social-link:hover i {
-            transform: scale(1.2);
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 80px;
-            padding: 30px 0;
-            border-top: 1px solid var(--border);
+        .logo-symbol {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            color: #000;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+        }
+
+        .brand-text {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
             color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-title);
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--text-title) !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--border-highlight);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enterprise Glass Card Base */
+        .card-enterprise {
+            background: var(--card-glass);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-enterprise:hover {
+            background: var(--card-glass-hover);
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* HERO EXECUTIVE SECTION */
+        .hero-section {
+            padding: 56px 48px;
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 9999px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-emerald);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+            box-shadow: 0 0 10px var(--accent-emerald);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(0.85); }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            color: var(--text-title);
+            margin-bottom: 18px;
+        }
+
+        .gradient-span {
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 85%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-lead {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-body);
+            max-width: 660px;
+            margin-bottom: 32px;
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-title);
+        }
+
+        .metric-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .hero-avatar-shell {
+            width: 190px;
+            height: 190px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(139, 92, 246, 0.2));
+            border: 1px solid var(--border-highlight);
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            background: #0f1420;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--accent-cyan);
+        }
+
+        .avatar-frame i {
+            font-size: 48px;
+        }
+
+        .avatar-badge {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 60px 0 28px;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.6px;
+            color: var(--text-title);
+        }
+
+        /* ABOUT / ARCHITECTURE STATEMENT */
+        .about-block {
+            padding: 36px 40px;
+            line-height: 1.85;
+            font-size: 1.05rem;
+        }
+
+        .highlight-quote {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* SKILLS ARCHITECTURE - 4-COLUMN ENTERPRISE BENTO */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-column {
+            padding: 28px;
+        }
+
+        .skill-column-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .skill-icon-wrap {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+        .skill-category-name {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-title);
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge-corp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid var(--border-subtle);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .badge-corp i {
+            color: var(--accent-cyan);
             font-size: 13px;
         }
 
-        footer a {
-            color: var(--primary);
+        .badge-corp:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-cyan);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* PROJECT PORTFOLIO GRID */
+        .project-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px;
+        }
+
+        .project-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .project-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--accent-cyan);
+        }
+
+        .outlink-indicator {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            transition: all 0.25s;
+        }
+
+        .project-card-link:hover .outlink-indicator {
+            background: var(--accent-cyan);
+            color: #000;
+            transform: translate(2px, -2px);
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .project-summary {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .project-stack-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 16px;
+        }
+
+        /* CONTACT / CONNECT SECTION */
+        .connect-strip {
+            padding: 36px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .connect-tile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-title);
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .connect-tile i {
+            font-size: 18px;
+            color: var(--accent-cyan);
+            transition: transform 0.2s;
+        }
+
+        .connect-tile:hover {
+            background: rgba(56, 189, 248, 0.08);
+            border-color: var(--border-glow);
+            transform: translateY(-2px);
+        }
+
+        .connect-tile:hover i {
+            transform: scale(1.15);
+        }
+
+        /* ENTERPRISE FOOTER */
+        footer.corp-footer {
+            margin-top: 80px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        /* Entrance Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(24px);
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        /* Responsive Breakpoints */
+        @media (max-width: 860px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                padding: 36px 28px;
             }
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 640px) {
-            .container { padding: 50px 16px; }
-            .hero-title { font-size: 2.8rem; }
-            .about-card { padding: 22px; }
-            footer { flex-direction: column; text-align: center; }
+            .hero-avatar-shell {
+                display: none;
+            }
+            .nav-links {
+                display: none;
+            }
+            .container {
+                padding-top: 36px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Dynamic Ambient Background Glows -->
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
-    <div class="grid-overlay"></div>
+    <!-- Ambient Background Lighting -->
+    <div class="ambient-canvas">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+    </div>
+    <div class="grid-mask"></div>
+
+    <!-- Corporate Navbar -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="#" class="brand-logo">
+                <div class="logo-symbol">H</div>
+                <div class="brand-text">Hiren Patel</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills & Architecture</a></li>
+                <li><a href="#projects">Engineering Works</a></li>
+                <li><a href="#connect" class="nav-btn">Get In Touch</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container">
 
-        <!-- HERO HEADER -->
-        <header class="fade-in">
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                <span>Available for Projects & Collaboration</span>
+        <!-- EXECUTIVE HERO SECTION -->
+        <section class="card-enterprise hero-section">
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span>Available for Full-Time Roles & High-Impact Projects</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-span">Hiren Patel</span>
+                </h1>
+                <p class="hero-lead">
+                    Software Engineer specializing in scalable full-stack web platforms, robust REST API architectures, and cross-platform desktop/mobile systems. Focused on high reliability, performance tuning, and maintainable software engineering.
+                </p>
+
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">Full-Stack</span>
+                        <span class="metric-label">Engineering Focus</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">Production</span>
+                        <span class="metric-label">Quality Mindset</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">India 🇮🇳</span>
+                        <span class="metric-label">Kathlal, Gujarat</span>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-title">
-                Hi, I'm <span class="gradient-text">Hiren Patel</span>
-            </h1>
-            <p class="hero-subtitle">Software Engineer &nbsp;·&nbsp; Multi-Platform & Full-Stack Developer</p>
-            <div class="location-tag">
-                <i class="fa-solid fa-location-dot"></i> Kathlal, Gujarat, India 🇮🇳
+
+            <div class="hero-avatar-shell">
+                <div class="avatar-frame">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="avatar-badge">SOFTWARE ENG</span>
+                </div>
             </div>
-        </header>
+        </section>
 
         <!-- ABOUT SECTION -->
-        <div class="section fade-in delay-1">
+        <section id="about">
             <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-user-astronaut"></i></div>
-                <h2 class="section-title">About Me</h2>
+                <span class="section-tag">Profile Overview</span>
+                <h2 class="section-heading">Engineering Mindset & Background</h2>
             </div>
-            <div class="glass about-card">
-                I'm a passionate Software Engineer and Full Stack Developer who thrives on architecting robust digital solutions, cross-platform apps, and scalable web applications. Continuously exploring cutting-edge technologies, solving complex real-world challenges, and optimizing system architectures.
+            <div class="card-enterprise about-block">
+                I am a dedicated Software Engineer with a rigorous foundation in computer science and real-world system architecture. My technical journey centers on engineering clean, scalable, and resilient digital solutions — ranging from data-heavy enterprise billing engines to high-throughput web applications.
                 <br><br>
-                💡 <em>"I enjoy debugging and optimizing complex codebases more than writing from scratch!"</em>
+                I thrive in environments where performance, code modularity, and database optimization are top priorities. With a deep passion for system diagnostics, refactoring, and clean architectural design, I bridge user needs with solid technical execution.
+                <div class="highlight-quote">
+                    "I believe great engineering isn't just about shipping features — it's about building systems that remain maintainable, secure, and performant at scale."
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- TECH STACK & SKILLS -->
-        <div class="section fade-in delay-2">
+        <!-- SKILLS & ECOSYSTEM SECTION -->
+        <section id="skills">
             <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <h2 class="section-title">Tech Stack & Ecosystem</h2>
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-heading">Technical Stack & Ecosystem</h2>
             </div>
-            <div class="skills-container">
 
-                <!-- Programming & Core -->
-                <div class="glass skill-group">
-                    <div class="skill-group-title"><i class="fa-solid fa-code"></i> Core & Frameworks</div>
-                    <div class="chips-wrapper">
-                        <span class="chip"><i class="fa-brands fa-php"></i> PHP</span>
-                        <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-                        <span class="chip"><i class="fa-solid fa-feather-pointed"></i> Flutter / Dart</span>
-                        <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
-                        <span class="chip"><i class="fa-brands fa-react"></i> React</span>
-                        <span class="chip"><i class="fa-solid fa-bolt"></i> Django / Flask</span>
+            <div class="skills-grid">
+                <!-- Core & Backend -->
+                <div class="card-enterprise skill-column">
+                    <div class="skill-column-header">
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-server"></i></div>
+                        <h3 class="skill-category-name">Backend & Core</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="badge-corp"><i class="fa-brands fa-php"></i> PHP</span>
+                        <span class="badge-corp"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="badge-corp"><i class="fa-solid fa-bolt"></i> Django</span>
+                        <span class="badge-corp"><i class="fa-solid fa-flask"></i> Flask</span>
+                        <span class="badge-corp"><i class="fa-brands fa-node-js"></i> RESTful APIs</span>
                     </div>
                 </div>
 
-                <!-- Frontend & UI -->
-                <div class="glass skill-group">
-                    <div class="skill-group-title"><i class="fa-solid fa-palette"></i> Frontend & Design</div>
-                    <div class="chips-wrapper">
-                        <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
-                        <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3 / SCSS</span>
-                        <span class="chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
-                        <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Responsive UI</span>
+                <!-- Client-Side & Mobile -->
+                <div class="card-enterprise skill-column">
+                    <div class="skill-column-header">
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-desktop"></i></div>
+                        <h3 class="skill-category-name">Frontend & Apps</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="badge-corp"><i class="fa-solid fa-feather-pointed"></i> Flutter</span>
+                        <span class="badge-corp"><i class="fa-brands fa-react"></i> React</span>
+                        <span class="badge-corp"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="badge-corp"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+                        <span class="badge-corp"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
                     </div>
                 </div>
 
-                <!-- Databases & APIs -->
-                <div class="glass skill-group">
-                    <div class="skill-group-title"><i class="fa-solid fa-database"></i> Databases & APIs</div>
-                    <div class="chips-wrapper">
-                        <span class="chip"><i class="fa-solid fa-server"></i> MySQL</span>
-                        <span class="chip"><i class="fa-solid fa-database"></i> SQLite</span>
-                        <span class="chip"><i class="fa-solid fa-network-wired"></i> REST APIs</span>
-                        <span class="chip"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+                <!-- Database & Persistence -->
+                <div class="card-enterprise skill-column">
+                    <div class="skill-column-header">
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="skill-category-name">Data & Storage</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="badge-corp"><i class="fa-solid fa-database"></i> MySQL</span>
+                        <span class="badge-corp"><i class="fa-solid fa-table"></i> SQLite</span>
+                        <span class="badge-corp"><i class="fa-solid fa-diagram-project"></i> Relational Design</span>
+                        <span class="badge-corp"><i class="fa-solid fa-bolt"></i> Query Tuning</span>
                     </div>
                 </div>
 
-                <!-- Tools & Platforms -->
-                <div class="glass skill-group">
-                    <div class="skill-group-title"><i class="fa-solid fa-terminal"></i> Tools & OS</div>
-                    <div class="chips-wrapper">
-                        <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
-                        <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
-                        <span class="chip"><i class="fa-brands fa-apple"></i> macOS</span>
-                        <span class="chip"><i class="fa-brands fa-windows"></i> Windows</span>
+                <!-- Tooling & DevOps -->
+                <div class="card-enterprise skill-column">
+                    <div class="skill-column-header">
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-wrench"></i></div>
+                        <h3 class="skill-category-name">DevOps & Tools</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="badge-corp"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="badge-corp"><i class="fa-brands fa-github"></i> GitHub Actions</span>
+                        <span class="badge-corp"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+                        <span class="badge-corp"><i class="fa-brands fa-apple"></i> macOS</span>
+                        <span class="badge-corp"><i class="fa-brands fa-windows"></i> Windows</span>
                     </div>
                 </div>
-
             </div>
-        </div>
+        </section>
 
-        <!-- FEATURED PROJECTS -->
-        <div class="section fade-in delay-3">
+        <!-- FEATURED PROJECTS SHOWCASE -->
+        <section id="projects">
             <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <h2 class="section-title">Featured Projects</h2>
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-heading">Featured Engineering Projects</h2>
             </div>
-            <div class="projects-grid">
 
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/rapidmac" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-laptop-code folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+            <div class="project-showcase-grid">
+
+                <!-- Sawmill GST -->
+                <a href="https://github.com/Hirenpatel007/sawmill-gst-billing" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-receipt"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Sawmill GST Billing System</h3>
+                        <p class="project-summary">Enterprise billing, inventory tracking, and tax invoice calculation suite designed specifically for timber saw mill industrial workflows.</p>
                     </div>
-                    <div class="project-name">Rapid Accountings (macOS)</div>
-                    <div class="project-desc">Complete Accounting, GST Billing, e-Invoice & e-Way Bill management software for macOS with offline SQLite database.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> Flutter · Dart · SQLite
+                    <div class="project-stack-footer">
+                        <span>Python · Django · MySQL · Bootstrap</span>
                     </div>
                 </a>
 
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/sawmill-gst-billing" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-folder-open folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                <!-- Hari Trading -->
+                <a href="https://github.com/Hirenpatel007/hari_trading_platform" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Hari Trading Platform</h3>
+                        <p class="project-summary">Virtual stock exchange simulation platform featuring live ticker tracking, automated portfolio rebalancing, and ledger reporting.</p>
                     </div>
-                    <div class="project-name">Sawmill GST Billing</div>
-                    <div class="project-desc">Comprehensive GST Billing and Inventory Management System designed for Timber Saw Mills.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> Python · Django · MySQL
-                    </div>
-                </a>
-
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/hari_trading_platform" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-folder-open folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
-                    </div>
-                    <div class="project-name">Hari Trading Platform</div>
-                    <div class="project-desc">Virtual stock trading platform with real-time portfolio management and financial insights.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> Django · JavaScript · CSS3
+                    <div class="project-stack-footer">
+                        <span>Django · JavaScript · Financial APIs</span>
                     </div>
                 </a>
 
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/my-php-project" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-folder-open folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                <!-- Student Result -->
+                <a href="https://github.com/Hirenpatel007/my-php-project" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Student Examination & Result Suite</h3>
+                        <p class="project-summary">Dynamic academic management engine handling batch student records, examination score computations, and mark-sheet generation.</p>
                     </div>
-                    <div class="project-name">Student Result System</div>
-                    <div class="project-desc">Efficient student performance tracking and examination grading management web application.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> PHP · MySQL · Bootstrap
-                    </div>
-                </a>
-
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/health_chatbot" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-folder-open folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
-                    </div>
-                    <div class="project-name">Health AI Chatbot</div>
-                    <div class="project-desc">AI-powered medical assistant and symptom guidance conversational system.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> TypeScript · AI/LLM
+                    <div class="project-stack-footer">
+                        <span>PHP · MySQL · SCSS · Web Architecture</span>
                     </div>
                 </a>
 
-                <a class="glass project-card" href="https://github.com/Hirenpatel007/Hacking-Security-E-Books" target="_blank">
-                    <div class="project-top">
-                        <i class="fa-solid fa-folder-open folder-icon"></i>
-                        <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                <!-- Health Chatbot -->
+                <a href="https://github.com/Hirenpatel007/health_chatbot" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Health Advisory AI Chatbot</h3>
+                        <p class="project-summary">Conversational medical guidance agent utilizing structured decision-trees and natural language inputs for preliminary symptom triage.</p>
                     </div>
-                    <div class="project-name">Security Knowledge Library</div>
-                    <div class="project-desc">Curated open-source repository of cybersecurity, ethical hacking, and networking guides.</div>
-                    <div class="project-footer">
-                        <i class="fa-solid fa-circle"></i> Documentation · Security
+                    <div class="project-stack-footer">
+                        <span>TypeScript · AI Workflows · Node.js</span>
+                    </div>
+                </a>
+
+                <!-- Todo App -->
+                <a href="https://github.com/Hirenpatel007/todo" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Task Workflow & API Service</h3>
+                        <p class="project-summary">Full-featured productivity web platform exposing 30+ secured REST endpoints, role authentication, and background status workers.</p>
+                    </div>
+                    <div class="project-stack-footer">
+                        <span>Python · Django REST Framework · SQLite</span>
+                    </div>
+                </a>
+
+                <!-- Security Books -->
+                <a href="https://github.com/Hirenpatel007/Hacking-Security-E-Books" target="_blank" class="card-enterprise project-card-link">
+                    <div>
+                        <div class="project-card-top">
+                            <div class="project-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="outlink-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        </div>
+                        <h3 class="project-title">Cybersecurity Knowledge Library</h3>
+                        <p class="project-summary">Open-source documentation hub and reference archive covering application security, penetration methodologies, and network safety.</p>
+                    </div>
+                    <div class="project-stack-footer">
+                        <span>Open Source · Security Research · Docs</span>
                     </div>
                 </a>
 
             </div>
-        </div>
+        </section>
 
-        <!-- CONNECT SECTION -->
-        <div class="section fade-in delay-4">
+        <!-- CONNECT & CONTACT -->
+        <section id="connect">
             <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-paper-plane"></i></div>
-                <h2 class="section-title">Let's Connect</h2>
+                <span class="section-tag">Communication</span>
+                <h2 class="section-heading">Connect With Me</h2>
             </div>
-            <div class="links-grid">
-                <a class="glass social-link github" href="https://github.com/Hirenpatel007" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a class="glass social-link email" href="mailto:hirenpatel1198@gmail.com">
+
+            <div class="card-enterprise connect-strip">
+                <a class="connect-tile" href="mailto:hirenpatel1198@gmail.com">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Email</span>
                 </a>
-                <a class="glass social-link telegram" href="https://t.me/HDCHHABHAIYA" target="_blank">
+                <a class="connect-tile" href="https://github.com/Hirenpatel007" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a class="connect-tile" href="https://t.me/HDCHHABHAIYA" target="_blank">
                     <i class="fa-brands fa-telegram"></i>
                     <span>Telegram</span>
                 </a>
-                <a class="glass social-link instagram" href="https://www.instagram.com/hiren_patel_007" target="_blank">
+                <a class="connect-tile" href="https://www.instagram.com/hiren_patel_007" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
-                <a class="glass social-link facebook" href="https://www.facebook.com/share/161XUyNg6y/" target="_blank">
+                <a class="connect-tile" href="https://www.facebook.com/share/161XUyNg6y/" target="_blank">
                     <i class="fa-brands fa-facebook"></i>
                     <span>Facebook</span>
                 </a>
-                <a class="glass social-link snapchat" href="https://www.snapchat.com/add/hiren2532" target="_blank">
+                <a class="connect-tile" href="https://www.snapchat.com/add/hiren2532" target="_blank">
                     <i class="fa-brands fa-snapchat"></i>
                     <span>Snapchat</span>
                 </a>
             </div>
-        </div>
+        </section>
 
         <!-- FOOTER -->
-        <footer>
-            <span>© 2026 <b>Hiren Patel</b> &nbsp;·&nbsp; Crafted with Precision</span>
-            <span><a href="https://github.com/Hirenpatel007" target="_blank">github.com/Hirenpatel007</a></span>
+        <footer class="corp-footer">
+            <div>
+                © 2026 <b>Hiren Patel</b> — Engineered for High Performance & Precision.
+            </div>
+            <div>
+                <a href="https://github.com/Hirenpatel007" target="_blank">github.com/Hirenpatel007</a>
+            </div>
         </footer>
 
     </div>
